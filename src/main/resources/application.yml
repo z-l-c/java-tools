@@ -1,0 +1,57 @@
+# Spring配置
+spring:
+  profiles:
+    active: default
+  # 服务模块
+  devtools:
+    restart:
+      # 热部署开关
+      enabled: true
+
+server:
+  # 服务器的HTTP端口
+  port: 8080
+  servlet:
+    # 应用的访问路径
+    context-path: /
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+    # tomcat线程
+    threads:
+      # 最大线程数，默认为200
+      max: 200
+      # 启动初始化的线程数，默认值25
+      min-spare: 25
+
+# http请求客户端
+httpclient:
+  poolMaxActive: 200  #最大连接数
+  poolMaxPerRoute: 2   #最大路由
+  socketTimeOut: 60000   #socket超时时间
+  connectTimeout: 30000  #连接超时时间
+  connectionRequestTimeout: 30000 #连接请求超时时间
+
+# SMTP server
+smtp:
+  host: smtp.host
+  # 是否启用ssl
+  ssl: true
+  # 是否需要账号登录
+  auth: true
+  # 认证账号，auth=ture时，填写
+  user: sender@test.com
+  # 账号密钥，auth=ture时，填写
+  pass: xxxxxxxxx
+
+# 邮件
+email:
+  # 发件人
+  sender: sender@test.com
+
+# Azure
+azure:
+  # Blob配置
+  blob:
+    # 连接字符串
+    connectionString: 'DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;'
